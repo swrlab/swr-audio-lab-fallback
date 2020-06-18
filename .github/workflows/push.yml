@@ -1,0 +1,48 @@
+name: push
+
+
+on:
+  push:
+    branches:
+     - master
+
+
+env:
+  IMAGE_NAME: swr-lab-fallback
+
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo 👀
+      uses: actions/checkout@v1
+
+    - name: Setup Google Cloud Auth 🔑
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        service_account_email: ${{ secrets.GCP_IAM_LAB_EMAIL }}
+        service_account_key: ${{ secrets.GCP_IAM_LAB_KEY }}
+        
+    - name: Login to Registry 🔑
+      run: "gcloud auth configure-docker"
+
+    - name: 🔐 Write swr-lab-radiohub login
+      run: echo '${{ secrets.KEYS__SWR_LAB_RADIOHUB }}' > ./keys/swr-lab-radiohub.json
+
+    - name: Building docker image 🚧
+      run: "docker build ./ --file ./Dockerfile -t image"
+
+    - name: Tagging & Pushing docker 🏷
+      run: |
+        # Strip git ref prefix from version
+        VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+        # Strip "v" prefix from tag name
+        [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+        
+        docker tag image eu.gcr.io/swr-lab/$IMAGE_NAME:git-$(date +%j)-$VERSION-$GITHUB_SHA
+        docker push eu.gcr.io/swr-lab/$IMAGE_NAME:git-$(date +%j)-$VERSION-$GITHUB_SHA
+
+    - name: Logout 👋
+      run: "docker logout"

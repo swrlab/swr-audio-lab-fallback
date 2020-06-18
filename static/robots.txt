@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /swr2/
+Disallow: /images/
+Disallow: /ard-traffic/
+Disallow: /radiohub-dev/
+Disallow: /radiohub-stage/
