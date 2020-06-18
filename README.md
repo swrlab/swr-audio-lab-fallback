@@ -1,5 +1,11 @@
 # swr-audio-lab-fallback
 
+<p align="center">
+  <img src="https://cdn-static.lab.swr.de/images/v1/get/swr-audio-lab-icon-black-smooth/img?width=256&d=gh-fallback" width="128">
+</p>
+
+![push](https://github.com/swrlab/swr-audio-lab-fallback/workflows/push/badge.svg?event=push)
+
 This service manages root or unmatched routes in SWR audio labs' GKE Cluster. It also includes verfications and a tiny redirect service.  
 
 ## OpenAPI specs
