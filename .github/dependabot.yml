@@ -1,32 +1,12 @@
 version: 2
 updates:
 - package-ecosystem: npm
-  directory: "/swr-lab-push-intern"
+  directory: "/"
+  open-pull-requests-limit: 10
   schedule:
     interval: daily
     time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: npm
-  directory: "/swr-lab-app-domains"
+- package-ecosystem: "github-actions"
+  directory: "/"
   schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: npm
-  directory: "/audiogram"
-  schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: npm
-  directory: "/swr-lab-stackdriver-log"
-  schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: npm
-  directory: "/swr-lab-dashboard"
-  schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
+    interval: "daily"

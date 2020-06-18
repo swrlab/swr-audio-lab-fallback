@@ -8,10 +8,6 @@ WORKDIR /web/app
 # where available (npm@5+)
 COPY package*.json ./
 
-# Add yarn
-RUN npm i -g yarn
-
-
 # install node dependencies with clean slate
 RUN rm -rf node_modules
 RUN yarn
