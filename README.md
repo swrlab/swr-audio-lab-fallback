@@ -1,10 +1,12 @@
 # swr-audio-lab-fallback
 
 <p align="center">
-  <img src="https://cdn-static.lab.swr.de/images/v1/get/swr-audio-lab-icon-black-smooth/img?width=256&d=gh-fallback" width="128">
+  <a href="https://lab.swr.de/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-static.lab.swr.de/images/v1/get/swr-audio-lab-icon-black-smooth/img?width=256&d=gh-fallback" width="128"></a>
+  <br>
+  <br>
+  <a href="https://github.com/swrlab/swr-audio-lab-fallback/actions"><img src="https://github.com/swrlab/swr-audio-lab-fallback/workflows/push/badge.svg?event=push"></a>
+  <a href="https://github.com/swrlab/swr-audio-lab-fallback/"><img src="https://img.shields.io/github/repo-size/swrlab/swr-audio-lab-fallback"></a>
 </p>
-
-![push](https://github.com/swrlab/swr-audio-lab-fallback/workflows/push/badge.svg?event=push)
 
 This service manages root or unmatched routes in SWR audio labs' GKE Cluster. It also includes verfications and a tiny redirect service.  
 
