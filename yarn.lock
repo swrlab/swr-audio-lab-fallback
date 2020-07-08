@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@google-cloud/datastore@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/datastore/-/datastore-6.0.0.tgz#7305a6e5bbcf31732e82f230e1d0bed3e3210472"
-  integrity sha512-KOnv2xDQUA5DCPXLdhfp5uxCrE+1MBeXLrbRhTpprK+EweOXBP3Tv1SG6GB3QAKDLa00j2DWba1P1IIdnSSLAQ==
+"@google-cloud/datastore@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/datastore/-/datastore-6.1.0.tgz#1f52e816b6af9dc79b83efe7c1872f55e3b828c5"
+  integrity sha512-RQNDYjxuTiuY/pCHQq3WfUJKvd9Dn44mTpIK6VD8ulS66/pT3qlo2CpJXhIEpJcWLDSl/Ju6Lptp3JL5UxCjow==
   dependencies:
     "@google-cloud/promisify" "^2.0.0"
     arrify "^2.0.1"
