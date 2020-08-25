@@ -1,19 +1,19 @@
-FROM node:12.16-alpine
+# Load desired node pckg
+FROM node:14.6-alpine
 
 # Create app directory
 WORKDIR /web/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-# install node dependencies with clean slate
-RUN rm -rf node_modules
-RUN yarn
-
-# Bundle app source
+# Copy app source
 COPY . .
 
+# Install node dependencies with clean slate
+# Also download tokens
+RUN rm -rf node_modules && \
+	yarn
+
+# Expose port
 EXPOSE 80
+
+# Run app
 CMD [ "yarn", "start" ]
