@@ -11,12 +11,12 @@ jobs:
   test-node:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-node@v2.1.1
+    - uses: actions/setup-node@v2
       with:
         node-version: 14.6
 
     - name: 👀 Checkout repo
-      uses: actions/checkout@v2.3.2
+      uses: actions/checkout@v2
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
