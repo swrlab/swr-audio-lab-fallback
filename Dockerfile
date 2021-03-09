@@ -1,5 +1,5 @@
 # Load desired node pckg
-FROM node:14.6-alpine
+FROM node:14.16-alpine
 
 # Create app directory
 WORKDIR /web/app
@@ -10,7 +10,7 @@ COPY . .
 # Install node dependencies with clean slate
 # Also download tokens
 RUN rm -rf node_modules && \
-	yarn
+	yarn install --production
 
 # Expose port
 EXPOSE 80

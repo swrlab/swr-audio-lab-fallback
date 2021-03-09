@@ -18,9 +18,6 @@ jobs:
     - name: 👀 Checkout repo
       uses: actions/checkout@v2.3.2
 
-    - name: Install yarn
-      run: npm install -g yarn
-
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -36,7 +33,7 @@ jobs:
       run: echo '${{ secrets.KEYS__SWR_LAB_RADIOHUB }}' > ./keys/swr-lab-radiohub.json
 
     - name: 📦 Install Dependencies
-      run: yarn
+      run: yarn install --production
 
     - name: ❓ Run index
       run: yarn test
