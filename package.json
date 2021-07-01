@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@swrlab/swr-prettier-config": "^0.1.2",
-		"nodemon": "^2.0.7"
+		"nodemon": "^2.0.9"
 	},
 	"prettier": "@swrlab/swr-prettier-config"
 }
